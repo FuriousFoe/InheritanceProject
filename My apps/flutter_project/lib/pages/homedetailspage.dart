@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/models/catalog.dart';
+import 'package:flutter_project/utils/routes.dart';
 import 'package:flutter_project/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -15,7 +16,48 @@ class HomeDetailPage extends StatelessWidget {
       appBar: AppBar(backgroundColor: Colors.transparent),
       backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
-        color: context.cardColor,
+        child : Row(
+          children: <Widget>[
+            SizedBox(height: 25,),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: ElevatedButton(
+                  onPressed: (){
+                    Navigator.pushNamed(context,MyRoutes.termsRoute);
+                  },
+                style: TextButton.styleFrom(backgroundColor: Colors.purple),
+                  child: Icon(
+                    Icons.app_registration,
+                  ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: ElevatedButton(
+                onPressed: (){
+                  Navigator.pushNamed(context, MyRoutes.facilityRoute);
+                },
+                style: TextButton.styleFrom(backgroundColor: Colors.purple),
+                child:Icon(
+                  Icons.assignment_late,
+                )
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: ElevatedButton(
+                  onPressed: (){
+                    Navigator.pushNamed(context, MyRoutes.facilityRoute);
+                  },
+                  style: TextButton.styleFrom(backgroundColor: Colors.purple),
+                  child:Icon(
+                    Icons.assignment_late,
+                  )
+              ),
+            ),
+          ],
+        ),
+       /* color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -30,7 +72,7 @@ class HomeDetailPage extends StatelessWidget {
               child: "Add to fav".text.make(),
             ).wh(120, 50)
           ],
-        ).p32(),
+        ).p32(),  */
       ),
       body: SafeArea(
         bottom: false, 
@@ -56,18 +98,19 @@ class HomeDetailPage extends StatelessWidget {
                         .make(),
                     catalog.desc.text.textStyle(context.captionStyle).xl.make(),
                     10.heightBox,
-                    "Dolor sea takimata ipsum sea eirmod aliquyam est. Eos ipsum voluptua eirmod elitr, no dolor dolor amet eirmod dolor labore dolores magna. Amet vero vero vero kasd, dolore sea sed sit invidunt nonumy est sit clita. Diam aliquyam amet tempor diam no aliquyam invidunt. Elitr lorem eirmod dolore clita. Rebum."
+                    "Dolor sea takim eirmod dolor labore dolores magna. Amet vero vero vero kasd, dolore sea sed sit invidunt nonumy est sit clita. Diam aliquyam amet tempor diam no aliquyam invidunt. Elitr lorem eirmod dolore clita. Rebum."
                         .text
                         .textStyle(context.captionStyle)
                         .make()
                         .p16()
                   ],
                 ).py64(),
-              ),
-            ))
-          ],
-        ),
-      ),
+            )
+          )
+         ),
+        ]
+       ),
+     )    
     );
   }
 }
