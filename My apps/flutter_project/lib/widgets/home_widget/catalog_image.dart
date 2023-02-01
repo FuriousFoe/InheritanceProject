@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
-
+/*
 class CatalogImage extends StatelessWidget {
   final String image;
 
@@ -12,8 +12,8 @@ class CatalogImage extends StatelessWidget {
     ).box.p8.color(context.canvasColor).make().p0().w64(context);
   }
 }
+*/
 
-/*
 class CatalogImage extends StatelessWidget {
   final String image;
 
@@ -25,4 +25,3 @@ class CatalogImage extends StatelessWidget {
     ).box.rounded.p8.color(context.canvasColor).make().p16().w40(context);
   }
 }
-*/
