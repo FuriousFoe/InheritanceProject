@@ -1,7 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_project/models/catalog.dart';
 import 'package:flutter_project/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
+
+import '../utils/routes.dart';
 
 class HomeDetailPage extends StatelessWidget {
   final Item catalog;
@@ -28,12 +32,21 @@ class HomeDetailPage extends StatelessWidget {
                       MaterialStateProperty.all(context.theme.buttonColor),
                   shape: MaterialStateProperty.all(StadiumBorder())),
               child: "Add to fav".text.make(),
+            ).wh(120, 50),
+            SquareBox(10),
+            ElevatedButton(
+              onPressed: () => Navigator.pushNamed(context, MyRoutes.mapRoute),
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(context.theme.buttonColor),
+                  shape: MaterialStateProperty.all(StadiumBorder())),
+              child: "Map".text.make(),
             ).wh(120, 50)
           ],
         ).p32(),
       ),
       body: SafeArea(
-        bottom: false, 
+        bottom: false,
         child: Column(
           children: [
             Hero(
