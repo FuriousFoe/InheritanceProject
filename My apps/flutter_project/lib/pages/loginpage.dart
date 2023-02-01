@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_project/utils/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -9,6 +10,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   String name = "";
+  String password = "" ;
   bool changeButton = false;
 
   final _formKey = GlobalKey<FormState>();
@@ -24,6 +26,13 @@ class _LoginPageState extends State<LoginPage> {
         changeButton = false;
       });
     }
+  }
+   
+  getData (){
+   
+    Map<String,dynamic> loginData = {"Name" : name , "Password" : password } ; 
+    CollectionReference collectionReference = FirebaseFirestore.instance.collection('login') ;
+    collectionReference.add(loginData) ; 
   }
 
   @override
@@ -89,6 +98,10 @@ class _LoginPageState extends State<LoginPage> {
 
                           return null;
                         },
+                        onChanged: (value) {
+                          password = value;
+                          setState(() {});
+                        },
                       ),
                       SizedBox(
                         height: 40.0,
@@ -98,7 +111,11 @@ class _LoginPageState extends State<LoginPage> {
                         borderRadius:
                             BorderRadius.circular(changeButton ? 50 : 8),
                         child: InkWell(
-                          onTap: () => moveToHome(context),
+                        //  onTap: () => moveToHome(context), 
+                          onTap :(){ 
+                            Navigator.pushNamed(context, MyRoutes.homeRoute);
+                            getData() ;
+                          },
                           child: AnimatedContainer(
                             duration: Duration(seconds: 1),
                             width: changeButton ? 50 : 150,
