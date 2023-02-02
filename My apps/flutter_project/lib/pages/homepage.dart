@@ -9,6 +9,8 @@ import 'package:flutter_project/widgets/home_widget/catalog_list.dart';
 import 'package:flutter_project/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import '../widgets/drawer.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -40,18 +42,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: Drawer(
-          
-        ),
+        appBar: AppBar(),
+        drawer: MyDrawer(),
         backgroundColor: context.canvasColor,
-        floatingActionButton: FloatingActionButton(
+      /*  floatingActionButton: FloatingActionButton(
           onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
           backgroundColor: context.theme.buttonColor,
           child: Icon(
             CupertinoIcons.cart,
             color: Colors.white,
           ),
-        ),
+        ), */
         body: SafeArea(
           child: Container(
             padding: Vx.m32,

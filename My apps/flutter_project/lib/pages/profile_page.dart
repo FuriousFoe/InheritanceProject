@@ -1,6 +1,9 @@
 
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_project/utils/routes.dart';
 
 class Frame extends StatefulWidget {
   const Frame({Key? key}) : super(key: key);
@@ -52,70 +55,77 @@ class _FrameState extends State<Frame> {
                 ],
               ),
             ),
-            Container(
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Card(
-                        child: ListTile(
-                      leading: Icon(Icons.person, color: Colors.blueAccent),
-                      title: Text(
-                        'Account',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      subtitle: Text('Personal Information'),
-                      trailing: Icon(Icons.edit),
-                    )),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Card(
-                      child: ListTile(
-                        leading:
-                            Icon(Icons.location_on, color: Colors.blueAccent),
+            MaterialButton(
+              onPressed: () { 
+                 Navigator.pushNamed(context, MyRoutes.accountRoute);
+               },
+              child: Container(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Card(
+                          child: ListTile(
+                        leading: Icon(Icons.person, color: Colors.blueAccent),
                         title: Text(
-                          'Address',
+                          'Account',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        subtitle: Text('Shipping address'),
-                      ),
+                        subtitle: Text('Personal Information'),
+                        trailing: Icon(Icons.edit),
+                        
+                      )
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Card(
+                    Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Card(
                         child: ListTile(
-                      leading: Icon(Icons.add_card, color: Colors.blueAccent),
-                      title: Text(
-                        'Payment Method',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      subtitle: Text(
-                        'Connected credit cards',
-                      ),
-                    )),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Card(
-                      child: ListTile(
-                        leading: Icon(Icons.security, color: Colors.blueAccent),
-                        title: Text(
-                          'Security',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                          leading:
+                              Icon(Icons.location_on, color: Colors.blueAccent),
+                          title: Text(
+                            'Address',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
+                          subtitle: Text('Shipping address'),
                         ),
-                        subtitle: Text('Password'),
                       ),
                     ),
-                  ),
-                ],
+                    Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Card(
+                          child: ListTile(
+                        leading: Icon(Icons.add_card, color: Colors.blueAccent),
+                        title: Text(
+                          'Payment Method',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        subtitle: Text(
+                          'Connected credit cards',
+                        ),
+                      )),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Card(
+                        child: ListTile(
+                          leading: Icon(Icons.security, color: Colors.blueAccent),
+                          title: Text(
+                            'Security',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: Text('Password'),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             Padding(
@@ -362,7 +372,7 @@ class _FrameState extends State<Frame> {
           ],
         ),
       ),
-      drawer: Drawer(),
+     // drawer: Drawer(),
     );
   }
 }

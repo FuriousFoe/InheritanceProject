@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_project/utils/routes.dart';
 
 class MyDrawer extends StatelessWidget {
   @override
@@ -48,6 +49,9 @@ class MyDrawer extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
+                onTap: () {
+                Navigator.pushNamed(context, MyRoutes.profileRoute);
+              },
             ),
             ListTile(
               leading: Icon(

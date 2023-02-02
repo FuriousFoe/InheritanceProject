@@ -1,6 +1,13 @@
 import 'dart:convert';
 
 class CatalogModel {
+
+   static final catModel = CatalogModel._internal();
+
+  CatalogModel._internal();
+
+  factory CatalogModel() => catModel;
+
    static List<Item> items = [
             Item( id: 1,
             name: "Kapol Hostel",
@@ -13,11 +20,11 @@ class CatalogModel {
    
    Item( 
            id: 2,
-            name: "OYO VJTI",
+            name: "VJTI Hostel",
             desc: "Entry on basis on vjti id :) ",
             price: 69,
             color: "#00ac51",
-            image: "https://images.oyoroomscdn.com/uploads/hotel_image/91367/9f2b15e83db14e09.jpg"
+            image: "https://www.itchotels.com/content/dam/itchotels/in/umbrella/images/headmast-desktop/itc-royalbengal.jpg"
     
    ),
 
