@@ -67,7 +67,7 @@ class HomeDetailPage extends StatelessWidget {
                   },
                   style: TextButton.styleFrom(backgroundColor: Colors.purple),
                   child:Icon(
-                    Icons.home,
+                    Icons.map,
                   )
               ),
             ),
