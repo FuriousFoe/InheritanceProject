@@ -59,6 +59,18 @@ class HomeDetailPage extends StatelessWidget {
                   )
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: ElevatedButton(
+                  onPressed: (){
+                    Navigator.pushNamed(context, MyRoutes.mapRoute);
+                  },
+                  style: TextButton.styleFrom(backgroundColor: Colors.purple),
+                  child:Icon(
+                    Icons.home,
+                  )
+              ),
+            ),
           ],
         ),
        /* color: context.cardColor,
