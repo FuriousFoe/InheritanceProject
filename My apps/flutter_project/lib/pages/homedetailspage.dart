@@ -47,11 +47,11 @@ class HomeDetailPage extends StatelessWidget {
               padding: const EdgeInsets.all(12.0),
               child: ElevatedButton(
                   onPressed: (){
-                    Navigator.pushNamed(context, MyRoutes.facilityRoute);
+                    Navigator.pushNamed(context, MyRoutes.roomRoute);
                   },
                   style: TextButton.styleFrom(backgroundColor: Colors.purple),
                   child:Icon(
-                    Icons.assignment_late,
+                    Icons.home,
                   )
               ),
             ),

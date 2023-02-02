@@ -27,12 +27,14 @@ class CartPage extends StatelessWidget {
 class _CartTotal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+      final _cart = CartModel() ;
+
     return SizedBox(
       height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\$9999".text.xl5.color(context.theme.accentColor).make(),
+          "\$${_cart.totalPrice}".text.xl5.color(context.theme.accentColor).make(),
           30.widthBox,
           ElevatedButton(
             onPressed: () {},

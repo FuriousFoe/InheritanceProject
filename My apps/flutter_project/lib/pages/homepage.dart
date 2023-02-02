@@ -45,14 +45,14 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(),
         drawer: MyDrawer(),
         backgroundColor: context.canvasColor,
-        floatingActionButton: FloatingActionButton(
+      /*  floatingActionButton: FloatingActionButton(
           onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
           backgroundColor: context.theme.buttonColor,
           child: Icon(
             CupertinoIcons.cart,
             color: Colors.white,
           ),
-        ),
+        ), */
         body: SafeArea(
           child: Container(
             padding: Vx.m32,

@@ -6,6 +6,7 @@ import 'package:velocity_x/velocity_x.dart';
 
 import '../../models/catalog.dart';
 import '../../pages/homedetailspage.dart';
+import 'addToCart.dart';
 import 'catalog_image.dart';
 
 class CatalogList extends StatelessWidget {
@@ -58,7 +59,7 @@ class CatalogItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-/*
+
     return VxBox(
       child: Column(
         children: [
@@ -76,29 +77,30 @@ class CatalogItem extends StatelessWidget {
               catalog.name.text.lg.color(context.accentColor).bold.make(),
               Row(children: [ catalog.desc.text.textStyle(context.captionStyle).make(),
               10.heightBox,
-              ButtonBar(
+               ButtonBar(
                 alignment: MainAxisAlignment.spaceBetween ,
                 buttonPadding: EdgeInsets.zero,
                 children: [
-              //    "\$${catalog.price}".text.bold.xl.make(),
-                  ElevatedButton(
+                 //  "\$${catalog.price}".text.bold.xl.make(),
+                 //AddToCart() 
+                    ElevatedButton(
                     onPressed: () {},
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
                             context.theme.buttonColor),
                         shape: MaterialStateProperty.all(
                           StadiumBorder(),
-                        )),
+                        )), 
                     child: "+".text.make(),
-                  )
+                  ),
                 ],
               ).pOnly(right: 8.0)  ],)
             ],
           ))
         ],
       ),
-    ).color(context.cardColor).rounded.square(150).make().py16();  */
-    
+    ).color(context.cardColor).rounded.square(150).make().py16();  
+    /*
     return VxBox(
       child: Row(
         children: [
@@ -138,6 +140,8 @@ class CatalogItem extends StatelessWidget {
           ))
         ],
       ),
-    ).color(context.cardColor).rounded.square(150).make().py8();
+    ).color(context.cardColor).rounded.square(150).make().py8();  */
   }
+
 }
+
