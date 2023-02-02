@@ -8,6 +8,7 @@ import 'package:flutter_project/pages/homepage.dart';
 import 'package:flutter_project/pages/button_page.dart';
 import 'package:flutter_project/pages/loginpage.dart';
 import 'package:flutter_project/pages/profile_page.dart';
+import 'package:flutter_project/pages/room_detailspage.dart';
 import 'package:flutter_project/pages/terms_page.dart';
 import 'package:flutter_project/utils/routes.dart';
 import 'package:flutter_project/widgets/themes.dart';
@@ -15,6 +16,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
    
 void main() async {
+  
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp( MaterialApp(home: const MyApp()));
@@ -40,7 +42,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.buttonRoute:(context) => Home(),
         MyRoutes.termsRoute:(context) => Terms(),
         MyRoutes.accountRoute:(context) => Frametwo(),
-        MyRoutes.homeDetailsRoute:(context) => HomePage(),
+        MyRoutes.roomRoute:(context) => RoomDetails(),
       },
     );
   }
