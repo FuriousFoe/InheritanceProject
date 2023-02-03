@@ -1,7 +1,32 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_project/utils/routes.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:provider/provider.dart';
 import 'package:velocity_x/velocity_x.dart';
+
+class GoogleSignInProvider extends ChangeNotifier {
+  final google_sign_in = GoogleSignIn();
+  GoogleSignInAccount? _user;
+
+  GoogleSignInAccount get user => _user!;
+
+  Future googleLogin() async {
+    final google_user = await google_sign_in.signIn();
+    if (google_user == null) return;
+    _user = google_user;
+
+    final google_auth = await google_user.authentication;
+
+    final credential = GoogleAuthProvider.credential(
+        accessToken: google_auth.accessToken, idToken: google_auth.idToken);
+
+    await FirebaseAuth.instance.signInWithCredential(credential);
+    notifyListeners();
+  }
+}
 
 class LoginPage extends StatefulWidget {
   @override
@@ -10,7 +35,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   String name = "";
-  String password = "" ;
+  String password = "";
   bool changeButton = false;
 
   final _formKey = GlobalKey<FormState>();
@@ -27,12 +52,12 @@ class _LoginPageState extends State<LoginPage> {
       });
     }
   }
-   
-  getData (){
-   
-    Map<String,dynamic> loginData = {"Name" : name , "Password" : password } ; 
-    CollectionReference collectionReference = FirebaseFirestore.instance.collection('login') ;
-    collectionReference.add(loginData) ; 
+
+  getData() {
+    Map<String, dynamic> loginData = {"Name": name, "Password": password};
+    CollectionReference collectionReference =
+        FirebaseFirestore.instance.collection('login');
+    collectionReference.add(loginData);
   }
 
   @override
@@ -92,7 +117,7 @@ class _LoginPageState extends State<LoginPage> {
                         validator: (value) {
                           if (value!.isEmpty) {
                             return "Password cannot be empty";
-                          } else if (value.length == 5) {
+                          } else if (value.length == 6) {
                             return "Password length should be atleast 6";
                           }
 
@@ -111,10 +136,10 @@ class _LoginPageState extends State<LoginPage> {
                         borderRadius:
                             BorderRadius.circular(changeButton ? 50 : 8),
                         child: InkWell(
-                        //  onTap: () => moveToHome(context), 
-                          onTap :(){ 
+                          //  onTap: () => moveToHome(context),
+                          onTap: () {
                             Navigator.pushNamed(context, MyRoutes.homeRoute);
-                            getData() ;
+                            getData();
                           },
                           child: AnimatedContainer(
                             duration: Duration(seconds: 1),
@@ -136,6 +161,24 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
+                      SizedBox(height: 15),
+                      ChangeNotifierProvider(
+                        create: (context) => GoogleSignInProvider(),
+                        child: ElevatedButton.icon(
+                            style: ElevatedButton.styleFrom(
+                                primary: context.theme.buttonColor,
+                                onPrimary: Colors.white,
+                                minimumSize: Size(double.infinity, 50)),
+                            onPressed: () {
+                              final provider =
+                                  Provider.of<GoogleSignInProvider>(context,
+                                      listen: false);
+                              provider.googleLogin();
+                            },
+                            icon: FaIcon(FontAwesomeIcons.google,
+                                color: Colors.white),
+                            label: Text("Sign-up with Google Account")),
+                      )
                     ],
                   ),
                 )
