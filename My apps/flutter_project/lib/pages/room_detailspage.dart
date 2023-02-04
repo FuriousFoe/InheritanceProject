@@ -2,14 +2,66 @@ import 'package:flutter/material.dart';
 //import 'package:buttons/utiles/routes.dart';
 import 'package:flutter_project/utils/routes.dart';
 
-class RoomDetails extends StatelessWidget {
-  const RoomDetails({super.key});
+class RoomDetails extends StatefulWidget {
+  const RoomDetails({super.key, required this.title});
+  
+  final String title ;
+  @override
+  State<RoomDetails> createState() => _RoomDetailsState();
+}
+
+class _RoomDetailsState extends State<RoomDetails> {
+ String valueChoose ='' ;
+
+  List listItem = [ "1 RK", "1 BHK" , "2 BHK" , "3BHK" ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: SingleChildScrollView(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+     /* body: SingleChildScrollView(
+
+
+        child: Padding( 
+          padding: const EdgeInsets.all(16.0),
+          child: Container(
+            padding: EdgeInsets.only(left: 16 ,right: 16),
+            decoration: BoxDecoration(
+               border: Border.all(color:Colors.grey ,width: 1),
+               borderRadius: BorderRadius.circular(15),
+              ),
+            child: DropdownButton(
+              hint: Text("Select Size: "),
+              dropdownColor: Colors.white,
+              icon: Icon(Icons.arrow_drop_down),
+              iconSize: 36,
+              isExpanded: true,
+              underline: SizedBox(),
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 22, 
+                ),
+              value: valueChoose,
+              onChanged: (newValue){
+                setState(() {
+                  valueChoose = newValue as String;
+                });
+              },
+
+              items: listItem.map((valueItem) {
+                return DropdownMenuItem(
+                  value: valueItem,
+                  child: Text(valueItem),
+                );
+              }).toList(),
+            ),
+          ),
+        ), 
+      ) */
+
+      body:  SingleChildScrollView(
         child: Material(
           child: Column(
             children: [
@@ -43,6 +95,8 @@ class RoomDetails extends StatelessWidget {
                   fontSize: 18
                 ),),
               ),
+
+              
             ],
     
           ),
