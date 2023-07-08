@@ -27,6 +27,7 @@ class AuthPage extends StatelessWidget {
               onPressed: () {
                final provider = Provider.of<GoogleSignInProvider>(context , listen: false) ;
                 provider.googleLogin() ;
+                MaterialPageRoute(builder: (context) => LoginPage()) ;
               },
             ),
             const SizedBox(height: 20),
