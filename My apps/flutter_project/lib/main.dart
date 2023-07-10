@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/pages/account_detailspage.dart';
 import 'package:flutter_project/pages/authentication_page.dart';
 import 'package:flutter_project/pages/cart_page.dart';
+import 'package:flutter_project/pages/dynamic_page.dart';
 import 'package:flutter_project/pages/facilities_page.dart';
 import 'package:flutter_project/pages/homedetailspage.dart';
 import 'package:flutter_project/pages/homepage.dart';
@@ -26,7 +27,6 @@ void main() async {
   runApp( MaterialApp(home: const MyApp()));
   }
 
-
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
          theme: MyTheme.lightTheme(context),
          darkTheme: MyTheme.darkTheme(context),
          debugShowCheckedModeBanner: false,
-         initialRoute: MyRoutes.authRoute,
+         initialRoute: MyRoutes.dynamicRoute,
          routes: {
           "/": (context) => LoginPage(),
           MyRoutes.homeRoute: (context) => HomePage(),
@@ -52,7 +52,8 @@ class MyApp extends StatelessWidget {
           MyRoutes.roomRoute:(context) => RoomDetails(),
           MyRoutes.mapRoute: (context) => GoogleMapAPI(),
           MyRoutes.authRoute:(context) => AuthPage() , 
-          MyRoutes.profileRoute:(context) => Profile() 
+          MyRoutes.profileRoute:(context) => Profile(),
+          MyRoutes.dynamicRoute:(context) => Dropdown(),
         },
       ),
     );

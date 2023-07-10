@@ -12,5 +12,6 @@ class MyRoutes {
   static String mapRoute = "/google_map_api";
   static String authRoute = "/auth" ;
   static String profileRoute = "/profile" ;
+  static String dynamicRoute = "/dynamic" ;
   }
 
