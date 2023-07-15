@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/pages/account_detailspage.dart';
 import 'package:flutter_project/pages/authentication_page.dart';
 import 'package:flutter_project/pages/cart_page.dart';
+import 'package:flutter_project/pages/dummy.dart';
 import 'package:flutter_project/pages/dynamic_page.dart';
 import 'package:flutter_project/pages/facilities_page.dart';
 import 'package:flutter_project/pages/homedetailspage.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
          theme: MyTheme.lightTheme(context),
          darkTheme: MyTheme.darkTheme(context),
          debugShowCheckedModeBanner: false,
-         initialRoute: MyRoutes.dynamicRoute,
+         initialRoute: MyRoutes.profileRoute, 
          routes: {
           "/": (context) => LoginPage(),
           MyRoutes.homeRoute: (context) => HomePage(),
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
           MyRoutes.authRoute:(context) => AuthPage() , 
           MyRoutes.profileRoute:(context) => Profile(),
           MyRoutes.dynamicRoute:(context) => Dropdown(),
+          MyRoutes.dummyRoute:(context) => ProfilePage(),
         },
       ),
     );

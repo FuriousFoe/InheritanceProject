@@ -11,7 +11,7 @@ class CatalogModel {
    static List<Item> items = [
             Item( id: 1,
             name: "Kapol Hostel",
-            desc: "Ek baar aooge , apna ghar bhul jaoge",
+            desc: " One of the finest hostels ",
             price: 1999,
             color: "#33505a",
             image: "https://pix8.agoda.net/hotelImages/124/1246280/1246280_16061017110043391702.jpg?ca=6&ce=1&s=1024x768"
@@ -54,7 +54,7 @@ class CatalogModel {
    ),
    Item(  id: 6,
           name: "Kedar Hostel",
-          desc: "Pehle istemal karo fir wishvas karo",
+          desc: "One of the Oldest Hostel's",
           price: 799,
           color: "#f73984",
           image: "http://cdn.cnn.com/cnnnext/dam/assets/211110114521-08-floating-hotel-gallery-11092021.jpg"
@@ -62,8 +62,8 @@ class CatalogModel {
    ),
 
     Item( id: 7,
-          name: "Jhol-Mol Colony",
-          desc: "Golmaal hai bhai !!!",
+          name: "Neel Residency",
+          desc: "Best Hostel's in the vicinity !!!",
           price: 1299,
           color: "#1c1c1c",
           image: "http://cdn.cnn.com/cnnnext/dam/assets/211110114521-08-floating-hotel-gallery-11092021.jpg"
