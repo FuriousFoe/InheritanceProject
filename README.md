@@ -10,7 +10,6 @@
 <div align="center">
    <strong>Hostel Hive</strong> - An app for students for finding pg & Hostel<br>
   CoC Inheritance 2022 || Team Binary <br> <br>
-  Add any <a href="https://shields.io/">Shields</a> here
 </div>
 <hr>
 
