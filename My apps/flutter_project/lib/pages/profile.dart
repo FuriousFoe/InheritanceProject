@@ -45,10 +45,22 @@ class _ProfileState extends State<Profile> {
             children: [
               Padding(
                 padding: EdgeInsets.all(16.0)) ,
-              CircleAvatar(
+              const CircleAvatar(
                 radius: 60,
-                backgroundImage: AssetImage("images/assets/login_image.png"),
+                backgroundImage: AssetImage("assets/images/down.png"),
               ),
+               Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: ElevatedButton(
+                  onPressed: (){
+                    Navigator.pushNamed(context,MyRoutes.dummyRoute);
+                  },
+                style: TextButton.styleFrom(backgroundColor: Colors.purple),
+                  child: Icon(
+                    Icons.image,
+                  ),
+              ),
+            ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: TextFormField(

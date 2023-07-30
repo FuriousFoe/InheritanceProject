@@ -248,7 +248,7 @@ class _DropdownState extends State<Dropdown> {
             ),
             Row(
               children: [
-                Checkbox(value: false, onChanged: (value) {}),
+                Checkbox(value: false, onChanged: (value) {} ),
                 const Text(
                   'Vacant',
                   style: TextStyle(color: Colors.black38),

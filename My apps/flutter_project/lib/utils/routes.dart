@@ -14,5 +14,6 @@ class MyRoutes {
   static String profileRoute = "/profile" ;
   static String dynamicRoute = "/dynamic" ;
   static String dummyRoute = "/dummy" ;
+  static String listRoute = "/list " ;
   }
 

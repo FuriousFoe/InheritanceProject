@@ -36,6 +36,9 @@ class MyDrawer extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
+               onTap: () {
+                Navigator.pushNamed(context, MyRoutes.homeRoute);
+              },
             ),
             ListTile(
               leading: Icon(
@@ -55,11 +58,11 @@ class MyDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(
-                CupertinoIcons.mail,
+                CupertinoIcons.add_circled,
                 color: Colors.white,
               ),
               title: Text(
-                "Email me",
+                "Add Your PG",
                 textScaleFactor: 1.2,
                 style: TextStyle(
                   color: Colors.white,

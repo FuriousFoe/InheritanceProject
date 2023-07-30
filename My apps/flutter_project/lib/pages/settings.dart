@@ -91,43 +91,44 @@ class _FrameState extends State<Frame> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          subtitle: Text('Shipping address'),
+                          subtitle: Text('Residential address'),
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: Card(
-                          child: ListTile(
-                        leading: Icon(Icons.add_card, color: Colors.blueAccent),
-                        title: Text(
-                          'Payment Method',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        subtitle: Text(
-                          'Connected credit cards',
-                        ),
-                      )),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: Card(
-                        child: ListTile(
-                          leading: Icon(Icons.security, color: Colors.blueAccent),
-                          title: Text(
-                            'Security',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          subtitle: Text('Password'),
-                        ),
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: const EdgeInsets.all(5.0),
+                    //   child: Card(
+                    //       child: ListTile(
+                    //     leading: Icon(Icons.add_card, color: Colors.blueAccent),
+                    //     title: Text(
+                    //       'Payment Method',
+                    //       style: TextStyle(fontWeight: FontWeight.bold),
+                    //     ),
+                    //     subtitle: Text(
+                    //       'Connected credit cards',
+                    //     ),
+                    //   )),
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.all(5.0),
+                    //   child: Card(
+                    //     child: ListTile(
+                    //       leading: Icon(Icons.security, color: Colors.blueAccent),
+                    //       title: Text(
+                    //         'Security',
+                    //         style: TextStyle(
+                    //           fontWeight: FontWeight.bold,
+                    //         ),
+                    //       ),
+                    //       subtitle: Text('Password'),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
             ),
+             
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Row(
@@ -281,7 +282,7 @@ class _FrameState extends State<Frame> {
               child: Padding(
                 padding: EdgeInsets.all(10),
                 child: Text(
-                  'Email Notifications',
+                  'Help & Support',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 25,
@@ -302,7 +303,7 @@ class _FrameState extends State<Frame> {
                           });
                         },
                         activeColor: Colors.blue,
-                        title: Text("New Deals")),
+                        title: Text("Feedback")),
                     CheckboxListTile(
                         value: newsLetter,
                         onChanged: (val) {
@@ -311,7 +312,7 @@ class _FrameState extends State<Frame> {
                           });
                         },
                         activeColor: Colors.blue,
-                        title: Text("Newsletter")),
+                        title: Text("About Us")),
                     CheckboxListTile(
                         value: specialOffers,
                         onChanged: (val) {
@@ -326,32 +327,32 @@ class _FrameState extends State<Frame> {
             SizedBox(
               height: 20,
             ),
-            Center(
-              child: Row(
-                children: [
-                  Container(
-                      alignment: Alignment.center,
-                      width: 180,
-                      height: 40,
-                      child: Text(
-                        "Discard changes",
-                        style: TextStyle(fontSize: 15),
-                      )),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Container(
-                      alignment: Alignment.center,
-                      width: 150,
-                      height: 40,
-                      color: Colors.blue,
-                      child: Text(
-                        "Save changes",
-                        style: TextStyle(fontSize: 15, color: Colors.white),
-                      ))
-                ],
-              ),
-            ),
+            // Center(
+            //   child: Row(
+            //     children: [
+            //       Container(
+            //           alignment: Alignment.center,
+            //           width: 180,
+            //           height: 40,
+            //           child: Text(
+            //             "Discard changes",
+            //             style: TextStyle(fontSize: 15),
+            //           )),
+            //       SizedBox(
+            //         width: 10,
+            //       ),
+            //       Container(
+            //           alignment: Alignment.center,
+            //           width: 150,
+            //           height: 40,
+            //           color: Colors.blue,
+            //           child: Text(
+            //             "Save changes",
+            //             style: TextStyle(fontSize: 15, color: Colors.white),
+            //           ))
+            //     ],
+            //   ),
+            // ),
             SizedBox(
               height: 20,
             ),
