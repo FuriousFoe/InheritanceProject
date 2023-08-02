@@ -2,6 +2,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
+import "package:flutter_project/widgets/add_profile/appbar_widget.dart" ;
+
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
 
@@ -22,12 +24,7 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Profile",
-        ),
-        elevation: 10,
-      ),
+      appBar: buildAppBar(context),
       body: Center(
         child: Column(
           children: <Widget>[

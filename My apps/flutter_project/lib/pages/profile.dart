@@ -30,7 +30,7 @@ class _ProfileState extends State<Profile> {
   }
    
   setData (){
-    Map<String,dynamic> userData = {"Name" : name , "Email id": email , "Phone no": contact_no , "College" : college } ; 
+    Map<String,dynamic> userData = {"Name" : name , "Email id": email , "Phone no": contact_no , "Colege" : college} ; 
     CollectionReference collectionReference = FirebaseFirestore.instance.collection('UserData') ;
     collectionReference.add(userData) ; 
   }
@@ -53,7 +53,7 @@ class _ProfileState extends State<Profile> {
               padding: const EdgeInsets.all(12.0),
               child: ElevatedButton(
                   onPressed: (){
-                    Navigator.pushNamed(context,MyRoutes.dummyRoute);
+             //       Navigator.pushNamed(context,MyRoutes.dummyRoute);
                   },
                 style: TextButton.styleFrom(backgroundColor: Colors.purple),
                   child: Icon(
@@ -147,4 +147,5 @@ class _ProfileState extends State<Profile> {
       ),
     );
   }
+
 }

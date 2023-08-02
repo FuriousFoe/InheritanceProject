@@ -29,7 +29,7 @@ class HomeDetailPage extends StatelessWidget {
                   onPressed: (){
                     Navigator.pushNamed(context,MyRoutes.termsRoute);
                   },
-                style: TextButton.styleFrom(backgroundColor: Colors.purple),
+                style: TextButton.styleFrom(backgroundColor: Colors.blueAccent),
                   child: Icon(
                     Icons.app_registration,
                   ),
@@ -41,7 +41,7 @@ class HomeDetailPage extends StatelessWidget {
                 onPressed: (){
                   Navigator.pushNamed(context, MyRoutes.facilityRoute);
                 },
-                style: TextButton.styleFrom(backgroundColor: Colors.purple),
+                style: TextButton.styleFrom(backgroundColor: Colors.blueAccent),
                 child:Icon(
                   Icons.assignment_late,
                 )
@@ -53,7 +53,7 @@ class HomeDetailPage extends StatelessWidget {
                   onPressed: (){
                     Navigator.pushNamed(context, MyRoutes.dynamicRoute);
                   },
-                  style: TextButton.styleFrom(backgroundColor: Colors.purple),
+                  style: TextButton.styleFrom(backgroundColor: Colors.blueAccent),
                   child:Icon(
                     Icons.home,
                   )
@@ -65,7 +65,7 @@ class HomeDetailPage extends StatelessWidget {
                   onPressed: (){
                     Navigator.pushNamed(context, MyRoutes.mapRoute);
                   },
-                  style: TextButton.styleFrom(backgroundColor: Colors.purple),
+                  style: TextButton.styleFrom(backgroundColor: Colors.blueAccent),
                   child:Icon(
                     Icons.map,
                   )
