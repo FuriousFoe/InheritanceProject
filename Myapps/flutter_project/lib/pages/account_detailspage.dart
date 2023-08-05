@@ -16,13 +16,13 @@ class Frametwo extends StatefulWidget {
 }
 
 class _FrametwoState extends State<Frametwo> {
-String name = "";
-String email = "";
-String num  = "";
-String add = "";
+  String name = "";
+  String email = "";
+  String num = "";
+  String add = "";
 
-bool changeButton = false;
-final _formKey = GlobalKey<FormState>();
+  bool changeButton = false;
+  final _formKey = GlobalKey<FormState>();
 
   moveToHome(BuildContext) async {
     if (_formKey.currentState!.validate()) {
@@ -35,46 +35,51 @@ final _formKey = GlobalKey<FormState>();
       });
     }
   }
-  addData (){
-   
-    Map<String,dynamic> demoData = {"Name" : name , "Email id": email , "Phone no": num , "Address" : add } ; 
-    CollectionReference collectionReference = FirebaseFirestore.instance.collection('data') ;
-    collectionReference.add(demoData) ; 
+
+  addData() {
+    Map<String, dynamic> demoData = {
+      "Name": name,
+      "Email id": email,
+      "Phone no": num,
+      "Address": add
+    };
+    CollectionReference collectionReference =
+        FirebaseFirestore.instance.collection('data');
+    collectionReference.add(demoData);
   }
 
   @override
   Widget build(BuildContext context) {
-       return Scaffold(
+    return Scaffold(
         appBar: AppBar(
-        title: Text("Aapke details" ,
-         style:TextStyle(color: Colors.black , fontSize: 20)),
-      ),
-      //  color: context.canvasColor,
-      body: Material(
-        child: SingleChildScrollView(
+          title: Text("Aapke details",
+              style: TextStyle(color: Colors.black, fontSize: 20)),
+        ),
+        //  color: context.canvasColor,
+        body: Material(
+            child: SingleChildScrollView(
           child: Form(
             key: _formKey,
             child: Column(
               children: [
-                 SizedBox(
+                SizedBox(
                   height: 20.0,
-                ), 
-                 Padding(
+                ),
+                Padding(
                   padding: const EdgeInsets.all(30.0),
                   child: Row(
-                 children: <Widget>[
-                    Text(
-                     "Account details :",
-                      style: TextStyle(
-                       fontWeight: FontWeight.bold, 
-                       
-                       fontSize: 25,
-                    ),
+                    children: <Widget>[
+                      Text(
+                        "Account details :",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-           ),
-              /*  SizedBox(
+                ),
+                /*  SizedBox(
                   height: 20.0,
                 ),  */
                 Padding(
@@ -112,13 +117,13 @@ final _formKey = GlobalKey<FormState>();
                           }
                           return null;
                         },
-                         onChanged: (value) {
+                        onChanged: (value) {
                           email = value;
                           setState(() {});
                         },
                       ),
                       TextFormField(
-                       // obscureText: true,
+                        // obscureText: true,
                         decoration: InputDecoration(
                           hintText: "123456789",
                           labelText: "Phone Number",
@@ -131,13 +136,13 @@ final _formKey = GlobalKey<FormState>();
                           }
                           return null;
                         },
-                         onChanged: (value) {
+                        onChanged: (value) {
                           num = value;
                           setState(() {});
                         },
                       ),
                       TextFormField(
-                       // obscureText: true,
+                        // obscureText: true,
                         decoration: InputDecoration(
                           hintText: "Jhut wala mat daaloo ",
                           labelText: "Residential Address",
@@ -150,7 +155,7 @@ final _formKey = GlobalKey<FormState>();
                           }
                           return null;
                         },
-                         onChanged: (value) {
+                        onChanged: (value) {
                           add = value;
                           setState(() {});
                         },
@@ -159,50 +164,31 @@ final _formKey = GlobalKey<FormState>();
                         height: 40.0,
                       ),
                       MaterialButton(
-                        color: context.theme.buttonColor,
-                       // borderRadius:  BorderRadius.circular(changeButton ? 50 : 8),
-                       minWidth: double.maxFinite,
-                       height: 50,
-                        onPressed: addData ,
+                        color: Colors.lightBlue,
+                        // borderRadius:  BorderRadius.circular(changeButton ? 50 : 8),
+                        minWidth: double.maxFinite,
+                        height: 50,
+                        onPressed: addData,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             SizedBox(width: 10),
-                            Text("Submit" ,
-                            style:TextStyle(color: Colors.white , fontSize: 20)),
+                            Text("Submit",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20)),
                           ],
                         ),
                         textColor: Colors.white,
                       ),
-                       SizedBox(
-              height: 10,
-            ),
-                     /*  MaterialButton(
-                        color: context.theme.buttonColor,
-                       // borderRadius:  BorderRadius.circular(changeButton ? 50 : 8),
-                       minWidth: double.maxFinite,
-                       height: 50,
-                        onPressed: (){
-                          Navigator.pushNamed(context,MyRoutes.profileRoute);
-                        } ,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            SizedBox(width: 10),
-                            Text("Back to Profile Page" ,
-                            style:TextStyle(color: Colors.white , fontSize: 20)),
-                          ],
-                        ),
-                        textColor: Colors.white,
-                      ), */
+                      SizedBox(
+                        height: 10,
+                      ),
                     ],
                   ),
                 )
               ],
             ),
           ),
-        )
-       )
-        );
+        )));
   }
 }

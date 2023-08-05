@@ -27,20 +27,23 @@ class CartPage extends StatelessWidget {
 class _CartTotal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-      final _cart = CartModel() ;
+    final _cart = CartModel();
 
     return SizedBox(
       height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\$${_cart.totalPrice}".text.xl5.color(context.theme.accentColor).make(),
+          "\$${_cart.totalPrice}"
+              .text
+              .xl5
+              .color(context.theme.hintColor)
+              .make(),
           30.widthBox,
           ElevatedButton(
             onPressed: () {},
             style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.all(context.theme.buttonColor)),
+                backgroundColor: MaterialStateProperty.all(Colors.lightBlue)),
             child: "Buy".text.white.make(),
           ).w32(context)
         ],
@@ -55,7 +58,7 @@ class _CartList extends StatefulWidget {
 }
 
 class __CartListState extends State<_CartList> {
-  final _cart = CartModel() ;
+  final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

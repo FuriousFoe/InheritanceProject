@@ -32,7 +32,7 @@ class _AddToCartState extends State<AddToCart> {
         }
       },
       style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(context.theme.buttonColor),
+          backgroundColor: MaterialStateProperty.all(Colors.lightBlue),
           shape: MaterialStateProperty.all(
             StadiumBorder(),
           )),

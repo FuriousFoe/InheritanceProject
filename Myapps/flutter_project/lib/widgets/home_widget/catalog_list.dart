@@ -15,7 +15,8 @@ class CatalogList extends StatelessWidget {
     return GridView.builder(
       shrinkWrap: true,
       itemCount: CatalogModel.items.length,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:1), 
+      gridDelegate:
+          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
       itemBuilder: (context, index) {
         final catalog = CatalogModel.getByPosition(index);
         return GridTile(
@@ -30,7 +31,7 @@ class CatalogList extends StatelessWidget {
           ),
         );
       },
-      ) ;
+    );
     /*ListView.builder(
       shrinkWrap: true,
       itemCount: CatalogModel.items.length,
@@ -59,7 +60,6 @@ class CatalogItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return VxBox(
       child: Column(
         children: [
@@ -75,34 +75,36 @@ class CatalogItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               catalog.name.text.lg.color(context.accentColor).bold.make(),
-              Row(children: [ catalog.desc.text.textStyle(context.captionStyle).make(),
-              10.heightBox,
-               ButtonBar(
-                alignment: MainAxisAlignment.spaceBetween ,
-                buttonPadding: EdgeInsets.zero,
+              Row(
                 children: [
-                 //  "\$${catalog.price}".text.bold.xl.make(),
-                 //AddToCart() 
-                    ElevatedButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(
-                            context.theme.buttonColor),
-                        shape: MaterialStateProperty.all(
-                          StadiumBorder(),
-                        )), 
-                    child: "+".text.make(),
-                  ),
+                  catalog.desc.text.textStyle(context.captionStyle).make(),
+                  10.heightBox,
+                  ButtonBar(
+                    alignment: MainAxisAlignment.spaceBetween,
+                    buttonPadding: EdgeInsets.zero,
+                    children: [
+                      //  "\$${catalog.price}".text.bold.xl.make(),
+                      //AddToCart()
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.lightBlue),
+                            shape: MaterialStateProperty.all(
+                              StadiumBorder(),
+                            )),
+                        child: "+".text.make(),
+                      ),
+                    ],
+                  ).pOnly(right: 8.0)
                 ],
-              ).pOnly(right: 8.0) 
-               ],
-               )
+              )
             ],
           ))
         ],
       ),
-    ).color(context.cardColor).rounded.square(150).make().py16();  
-    
+    ).color(context.cardColor).rounded.square(150).make().py16();
+
     // return VxBox(
     //   child: Row(
     //     children: [
@@ -142,8 +144,6 @@ class CatalogItem extends StatelessWidget {
     //       ))
     //     ],
     //   ),
-    // ).color(context.cardColor).rounded.square(150).make().py8();  
+    // ).color(context.cardColor).rounded.square(150).make().py8();
   }
-
 }
-
