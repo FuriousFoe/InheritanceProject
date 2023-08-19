@@ -41,30 +41,64 @@ class _HomePageState extends State<HomePage> {
     setState(() {});
   }
 
-  void signUserOut(){
+  void signUserOut() {
     FirebaseAuth.instance.signOut();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.blue[200],
+          leading: Builder(
+            builder: (context) => IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            ),
+          ),
+          title: Text('Hostel App'),
+          centerTitle: true,
+          actions: [
+            Tooltip(
+              message: 'Search', // Tooltip message
+              child: InkWell(
+                onTap: () {
+                  // Implement your search functionality here
+                },
+                splashColor: Colors.blue[100], // Set the splash color here
+                child: const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Icon(Icons.search),
+                ),
+              ),
+            ),
+            Tooltip(
+              message: 'Cart', // Tooltip message
+              child: InkWell(
+                onTap: () {
+                  // Implement your cart functionality here
+                },
+                splashColor: Colors.blue[100], // Set the splash color here
+                child: const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Icon(Icons.shopping_cart),
+                ),
+              ),
+            ),
+          ],
+        ),
+        /*AppBar(
           actions: [
             IconButton(
               onPressed: signUserOut , 
             icon: Icon(Icons.logout))
           ],
         ),
+        */
         drawer: MyDrawer(),
         backgroundColor: context.canvasColor,
-      /*  floatingActionButton: FloatingActionButton(
-          onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-          backgroundColor: context.theme.buttonColor,
-          child: Icon(
-            CupertinoIcons.cart,
-            color: Colors.white,
-          ),
-        ), */
         body: SafeArea(
           child: Container(
             padding: Vx.m32,

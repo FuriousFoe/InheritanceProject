@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/models/cart.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class CartPage extends StatelessWidget {
+class CartPag extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

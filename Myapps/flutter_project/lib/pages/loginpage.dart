@@ -6,12 +6,15 @@ import 'package:flutter_project/utils/routes.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class LoginPage extends StatefulWidget {
+class LOgin extends StatefulWidget {
+  const LOgin({super.key});
+
   @override
-  _LoginPageState createState() => _LoginPageState();
+  State<LOgin> createState() => _LOginState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LOginState extends State<LOgin> {
+  @override
   String name = "";
   String password = "";
   bool changeButton = false;
@@ -182,7 +185,7 @@ class _LoginPageState extends State<LoginPage> {
                                               color: Colors.white,
                                             )
                                           : const Text(
-                                              "Login",
+                                              "LoginPage",
                                               style: TextStyle(
                                                   color: Colors.white,
                                                   fontSize: 18),

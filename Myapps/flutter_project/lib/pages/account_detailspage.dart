@@ -51,15 +51,39 @@ class _FrametwoState extends State<Frametwo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Aapke details",
-              style: TextStyle(color: Colors.black, fontSize: 20)),
+      appBar: AppBar(
+        backgroundColor: Colors.blue[200],
+        centerTitle: true,
+        title: Text(
+          "Your Personal Details ",
+          style: TextStyle(color: Colors.black, fontSize: 18),
         ),
-        //  color: context.canvasColor,
-        body: Material(
-            child: SingleChildScrollView(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () {
+            // Implement your back button functionality here
+          },
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search, color: Colors.black),
+            onPressed: () {
+              // Implement your search functionality here
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.shopping_cart, color: Colors.black),
+            onPressed: () {
+              // Implement your cart functionality here
+            },
+          ),
+        ],
+      ),
+      //  color: context.canvasColor,
+      body: Material(
+        child: SingleChildScrollView(
           child: Form(
-            key: _formKey,
+            // ... rest of your form code
             child: Column(
               children: [
                 SizedBox(
@@ -68,11 +92,11 @@ class _FrametwoState extends State<Frametwo> {
                 Padding(
                   padding: const EdgeInsets.all(30.0),
                   child: Row(
-                    children: <Widget>[
+                    children: const <Widget>[
                       Text(
                         "Account details :",
                         style: TextStyle(
-                          fontWeight: FontWeight.bold,
+                          // fontWeight: FontWeight.bold,
                           fontSize: 25,
                         ),
                       ),
@@ -80,8 +104,8 @@ class _FrametwoState extends State<Frametwo> {
                   ),
                 ),
                 /*  SizedBox(
-                  height: 20.0,
-                ),  */
+              height: 20.0,
+            ),  */
                 Padding(
                   padding: const EdgeInsets.symmetric(
                       vertical: 5.0, horizontal: 30.0),
@@ -90,7 +114,16 @@ class _FrametwoState extends State<Frametwo> {
                       TextFormField(
                         decoration: InputDecoration(
                           hintText: "Enter Name",
-                          labelText: "Name ",
+                          labelText: "Full Name ",
+                          hintStyle: TextStyle(color: Colors.black45),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromARGB(255, 100, 143, 179)),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
                         ),
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -103,11 +136,20 @@ class _FrametwoState extends State<Frametwo> {
                           setState(() {});
                         },
                       ),
+                      SizedBox(height: 10),
                       TextFormField(
                         obscureText: true,
                         decoration: InputDecoration(
-                          hintText: "abcde@123.outlook.com",
+                          hintText: "abc01@gmail.com",
                           labelText: "Email-id:",
+                          hintStyle: TextStyle(color: Colors.black45),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 100, 143, 179)),
+                              borderRadius: BorderRadius.circular(15)),
                         ),
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -122,11 +164,20 @@ class _FrametwoState extends State<Frametwo> {
                           setState(() {});
                         },
                       ),
+                      SizedBox(height: 10),
                       TextFormField(
-                        // obscureText: true,
                         decoration: InputDecoration(
                           hintText: "123456789",
                           labelText: "Phone Number",
+                          hintStyle: TextStyle(color: Colors.black45),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromARGB(255, 100, 143, 179)),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
                         ),
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -141,11 +192,19 @@ class _FrametwoState extends State<Frametwo> {
                           setState(() {});
                         },
                       ),
+                      SizedBox(height: 10),
                       TextFormField(
-                        // obscureText: true,
                         decoration: InputDecoration(
-                          hintText: "Jhut wala mat daaloo ",
+                          hintText: " 77/55 xyz colony",
                           labelText: "Residential Address",
+                          hintStyle: TextStyle(color: Colors.black45),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 100, 143, 179)),
+                              borderRadius: BorderRadius.circular(15)),
                         ),
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -164,7 +223,7 @@ class _FrametwoState extends State<Frametwo> {
                         height: 40.0,
                       ),
                       MaterialButton(
-                        color: Colors.lightBlue,
+                        color: Colors.blue[200],
                         // borderRadius:  BorderRadius.circular(changeButton ? 50 : 8),
                         minWidth: double.maxFinite,
                         height: 50,
@@ -175,7 +234,7 @@ class _FrametwoState extends State<Frametwo> {
                             SizedBox(width: 10),
                             Text("Submit",
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 20)),
+                                    color: Colors.black, fontSize: 20)),
                           ],
                         ),
                         textColor: Colors.white,
@@ -189,6 +248,8 @@ class _FrametwoState extends State<Frametwo> {
               ],
             ),
           ),
-        )));
+        ),
+      ),
+    );
   }
 }

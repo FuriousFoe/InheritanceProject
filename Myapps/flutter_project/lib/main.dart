@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/pages/account_detailspage.dart';
 import 'package:flutter_project/pages/add_Pg.dart';
 import 'package:flutter_project/pages/authentication_page.dart';
-import 'package:flutter_project/pages/cart_page.dart';
+
 import 'package:flutter_project/pages/dummy.dart';
 import 'package:flutter_project/pages/dynamic_page.dart';
 import 'package:flutter_project/pages/facilities_page.dart';
@@ -11,6 +11,8 @@ import 'package:flutter_project/pages/homepage.dart';
 import 'package:flutter_project/pages/button_page.dart';
 import 'package:flutter_project/pages/listpage.dart';
 import 'package:flutter_project/pages/loginpage.dart';
+import 'package:flutter_project/pages/maps/cart.dart';
+import 'package:flutter_project/pages/muk.dart';
 import 'package:flutter_project/pages/profile.dart';
 import 'package:flutter_project/pages/settings.dart';
 import 'package:flutter_project/pages/room_detailspage.dart';
@@ -35,10 +37,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) => ChangeNotifierProvider(
         create: (context) => GoogleSignInProvider(),
         child: MaterialApp(
-          home: addYourPG(),
-          themeMode: ThemeMode.system,
-          theme: MyTheme.lightTheme(context),
-          darkTheme: MyTheme.darkTheme(context),
+          home: Frametwo(),
+          // themeMode: ThemeMode.system,
+          // theme: MyTheme.lightTheme(context),
+          // darkTheme: MyTheme.darkTheme(context),
           debugShowCheckedModeBanner: false,
           // initialRoute: MyRoutes.loginRoute,
           // routes: {
