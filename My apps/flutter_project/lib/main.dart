@@ -1,5 +1,9 @@
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_project/pages/add_pg.dart';
+import 'package:flutter_project/pages/occupied.dart';
+import 'package:flutter_project/pages/upcoming_vacancy.dart';
+import 'package:flutter_project/pages/vacant.dart';
 import 'package:flutter_project/widgets/add_profile/dummy_place.dart';
 import 'package:flutter_project/widgets/add_profile/profile_page.dart';
 import 'package:flutter_project/widgets/add_profile/user_preferences.dart';
@@ -54,7 +58,7 @@ class MyApp extends StatelessWidget {
            themeMode: ThemeMode.system,
            theme: MyTheme.lightTheme(context),
           //theme: ThemeProvider.themeOf(context),
-          initialRoute: MyRoutes.homeRoute,
+          initialRoute: MyRoutes.addpgRoute,
           routes: {
             "/": (context) => LoginPage(),
                MyRoutes.homeRoute: (context) => HomePage(),
@@ -71,7 +75,11 @@ class MyApp extends StatelessWidget {
               MyRoutes.authRoute:(context) => AuthPage() , 
               MyRoutes.profileRoute:(context) => DummyPage(),
               MyRoutes.dynamicRoute:(context) => Dropdown(),
-              MyRoutes.listRoute:(context) => listpage() 
+              MyRoutes.listRoute:(context) => listpage(), 
+              MyRoutes.addpgRoute:(context) => addYourPG(), 
+              MyRoutes.vacantRoute:(context) => vacantPG(), 
+              MyRoutes.occupiedRoute:(context) => occupiedPG(), 
+              MyRoutes.upcomingRoute:(context) => upcoming_vacancyPG(), 
           },
         ),
       );

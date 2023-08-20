@@ -145,7 +145,7 @@ class _DropdownState extends State<Dropdown> {
             ),
             const Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text('As per your choice :-' ,
+              child: Text('No of People :-' ,
               style: TextStyle(
                   color: Colors.black ,
                   fontSize: 18, 

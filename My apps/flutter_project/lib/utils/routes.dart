@@ -14,5 +14,9 @@ class MyRoutes {
   static String profileRoute = "/profile" ;
   static String dynamicRoute = "/dynamic" ;
   static String listRoute = "/list " ;
+  static String addpgRoute = "/addpg" ;
+  static String vacantRoute = "/vacant" ;
+  static String occupiedRoute = "/occupied" ;
+  static String upcomingRoute = "/upcoming" ;
   }
 

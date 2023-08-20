@@ -81,6 +81,9 @@ class MyDrawer extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
+               onTap: () {
+                Navigator.pushNamed(context, MyRoutes.addpgRoute);
+              },
             ),
               ListTile(
               leading: Icon(

@@ -123,7 +123,7 @@ class HomeDetailPage extends StatelessWidget {
                         .make(),
                     catalog.desc.text.textStyle(context.captionStyle).xl.make(),
                     10.heightBox,
-                    "Dolor sea takim eirmod dolor labore dolores magna. Amet vero vero vero kasd, dolore sea sed sit invidunt nonumy est sit clita. Diam aliquyam amet tempor diam no aliquyam invidunt. Elitr lorem eirmod dolore clita. Rebum."
+                    "Welcome to the vibrant and spirited haven that is hevan hostel ! Nestled in the heart of a bustling urban landscape, our hostel offers an unmatched fusion of youthful energy and cozy relaxation. Whether you're a solo traveler seeking new connections or a group of friends ready for urban exploration, Lively Haven Hostel is your perfect home away from home."
                         .text
                         .textStyle(context.captionStyle)
                         .make()
